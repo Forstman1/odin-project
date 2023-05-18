@@ -3,6 +3,8 @@ import classes from "./navbar.module.css"
 import avatar from "../../images/avatar.png"
 import logo from "../../images/1337.jpeg"
 
+
+
 function NavBar() {
     return <div className={classes.container}>
         <div>
@@ -18,3 +20,4 @@ function NavBar() {
 
 
 export default NavBar;
+
