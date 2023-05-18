@@ -1,6 +1,6 @@
 import React from "react";
 import Feed from "./feedpage/feed";
-import Contacts from "./Contact";
+import Contacts from "./Contactspage";
 import SideBar from "./sidebar";
 import classes from "./maincontent.module.css"
 
