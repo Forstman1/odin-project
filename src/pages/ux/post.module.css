@@ -4,7 +4,7 @@
     margin-top: 20px;
     width: 90%;
     background-color: white;
-
+    border-radius: 10px;
 }
 
 .avatar {
@@ -34,7 +34,6 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    
 }
 
 .likecomment {
@@ -43,7 +42,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 50px
+    height: 40px
     
 }
 
@@ -52,14 +51,13 @@
     border: none;
     cursor: pointer;
     width: 300px;
-    height: 60px;
-    border-radius: 20px;
+    height: 30px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5px;
-    /* text-align: center; */
 }
+
 .button:hover {
     background-color: #edf2f7;
     transition: 0.5s;

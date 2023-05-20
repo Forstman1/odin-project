@@ -1,9 +1,9 @@
 import * as React from 'react';
 import classes from "./post.module.css"
-import avatar from "../../../images/avatar.png"
-import likeimage from "../../../images/like.png"
-import likegris from "../../../images/likegris.png"
-import comment from "../../../images/comment.png"
+import avatar from "../../images/avatar.png"
+import likeimage from "../../images/like.png"
+import likegris from "../../images/likegris.png"
+import comment from "../../images/comment.png"
 
 
 

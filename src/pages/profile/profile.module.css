@@ -1,0 +1,149 @@
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    width: 100%;
+    /* height: 100%; */
+    /* height: 700px; */
+    /* background-color: white; */
+}
+
+.containers {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 450px;
+    background-color: white;
+    
+}
+
+.sub_container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
+    top: 0;
+}
+
+
+
+.couverture {
+    width: 100%;
+    height: 300px;
+    background-color: lightgrey;
+    border-radius: 5px;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.profile {
+    position: relative;    
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 80px;
+    border: 5px solid white;
+}
+
+.button {
+    height: 60px;
+    width: 100px;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+.maincontent {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.feed {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    width: 100%;
+}
+
+.text {
+    margin-left: 10px;
+}
+
+.post {
+    /* width: 700px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* margin: 0; */
+}
+
+
+
+.friends {
+    width: 450px;
+    border-radius: 10px;
+}
+
+.friends2 {
+    background-color: white;
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+
+
+
+@media screen and (max-width: 1200px) {
+    .info {
+        flex-direction: column;
+    }
+    .couverture {
+        width: 100%;
+        height: 200px;
+
+    }
+    .containers {
+        height: 500px;
+    }
+    .profile {
+        flex-direction: column;
+    }
+    .feed {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .friends {
+        margin-top: 50px;
+        width: 40%;
+    }
+    .post {
+        width: 70%;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .friends {
+        width: 25%;
+
+    }
+    .post {
+        width: 40%;
+    }
+  }

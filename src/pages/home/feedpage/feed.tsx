@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import classes from "./feed.module.css"
-import Post from "./post";
+import Post from "../../ux/post";
 import avatar from "../../../images/avatar.png"
 import photos from "../../../images/photos.png"
 
