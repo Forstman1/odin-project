@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, {  } from "react";
 import avatar from "../../images/avatar2.png"
 import classes from "./friend.module.css"
+
+
 
 const Friend = () => {
     return (

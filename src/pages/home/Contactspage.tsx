@@ -1,7 +1,7 @@
 import React from "react";
 import Contact from "./contact";
 import classes from "./contactspage.module.css"
-import avatar from "../../images/avatar.png"
+import avatar from "../../images/avatar5.jpeg"
 
 
 export default function Contacts () {

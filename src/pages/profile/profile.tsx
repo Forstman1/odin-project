@@ -4,6 +4,8 @@ import Post from "../ux/post";
 import avatar from "../../images/avatar2.png"
 import Friend from "./friend";
 
+
+
 const Profile = () => {
     return (
     <div className={classes.container}>

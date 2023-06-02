@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, {  } from "react";
 import NavBar from "../ux/navbar";
 import Profile from "./profile";
-import classes from "./profile.module.css"
-import Post from "../ux/post";
+// import Post from "../ux/post";
+
 
 
 const ProfilePage = () => {

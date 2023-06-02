@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import classes from "./navbar.module.css"
-import avatar from "../../images/avatar.png"
-import logo from "../../images/1337.jpeg"
+import avatar from "../../images/avatar5.jpeg"
+import logo from "../../images/logo3.png"
 import avatar2 from "../../images/avatar2.png"
 import exit from "../../images/exit.png"
+import { Link } from "react-router-dom";
 
 
 
@@ -18,7 +19,7 @@ function NavBar() {
     return <div className={classes.container}>
         <div>
         <div className={classes.avatar}>
-            <img className={classes.avatarimage} src={logo} alt="logo" />
+            <Link to={"/"}><img className={classes.avatarimage} src={logo} alt="logo" /></Link>
             <input className={classes.input} type="text" placeholder="Search" />
         </div>
         </div>
@@ -28,12 +29,13 @@ function NavBar() {
         {showAvatarInfo && (
         <div className={classes.avatar_info_container}>
           <div className={classes.card}>
-            <div className={classes.holder}><img className={classes.icon} src={avatar2} alt="avatar" /><div>My profile</div></div>
+            <Link className={classes.holder} to={"profile"}><img className={classes.icon} src={avatar2} alt="avatar" /><div>My profile</div></Link>
             <div className={classes.sep}></div>
-            <div className={classes.holder}><img className={classes.icon} src={exit} alt="avatar" /><div>Logout</div></div>
+            <Link className={classes.holder} to={"login"}><img className={classes.icon} src={exit} alt="avatar" /><div>Logout</div></Link>
           </div>
         </div>
       )}
+
     </div>
 }
 
