@@ -13,56 +13,91 @@
     justify-content: space-evenly;
     gap: 10px;
     align-items: center;
-    width: 90%;
+    width: 100%;
     background-color: white;
-    height: 150px;
-    border-radius: 5px;
+    height: 190px;
+    border-radius: 25px;
 }
 
 .sub_container {
     display: flex;
+    justify-content: space-around;
+    align-items: center;
     width: 100%;
-    gap: 10px;
     margin-left: 20px;
 }
 
 .avatar {
-    width: 40px;
+    width: 70px;
     background-color: white;
 }
 
 .sep {
-    border-top: 1px solid lightgray;
+    border-top: 1px solid #C6DEFF;
     width: 95%;
 }
 
 .input {
-    width: 90%;
+    width: 80%;
     height: 40px;
-    border-radius: 20px;
-    border: 1px solid lightgrey;
-    background-color: #edf2f7;
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #F8FBFF;
 }
 
+.input::placeholder {
+    color: #CECECE;
+}
+
+.imageicon {
+    width: 20px;
+}
 
 .button {
     border: 1px solid lightgrey;
     cursor: pointer;
     background-color: transparent;
-    height: 50px;
+    height: 5px;
     width: 95%;
     border-radius: 5px;
     border: none;
     transition: 0.5s;
     font-weight: bolder;
-    font-size: 18px;
+    font-size: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
+    color: #1A67B1;
 }
 
-.button:hover {
-    background-color: lightgray;
 
+
+.container {
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media screen and (max-width: 900px) {
+    .container {
+        width: 80%;
+    }
+    
+    .input {
+        width: 65%;
+        height: 30px;
+    }
+    .avatar {
+        width: 50px;
+    }
+    .sub_container {
+        justify-content: space-around;
+        width: 100%;
+    }
 }

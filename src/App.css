@@ -1,7 +1,8 @@
 body {
-    font-family: 'Fjalla One', sans-serif;
-    font-size: 17px; 
-    background-color: #edf2f7;
+    /* font-family: 'Fjalla One', sans-serif; */
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px; 
+    background-color: #F8FBFF;
 }
 
 button {

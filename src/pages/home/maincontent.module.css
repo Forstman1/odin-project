@@ -1,7 +1,22 @@
 
 
 .container {
-    margin-top: 90px;
+    margin-top: 120px;
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
+
+    /* justify-content: space-around; */
+}
+
+.sub_container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 300px;
+}
+
+@media screen and (max-width: 1360px) {
+    .sub_container {
+        margin-left: 0px;
+    }
 }

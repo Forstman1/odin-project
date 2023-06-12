@@ -1,5 +1,5 @@
 import React, {  } from "react";
-import avatar from "../../images/avatar2.png"
+import avatar from "../../images/profile.png"
 import classes from "./friend.module.css"
 
 

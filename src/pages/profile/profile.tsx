@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, {  } from "react";
 import classes from "./profile.module.css"
 import Post from "../ux/post";
-import avatar from "../../images/avatar2.png"
+import avatar from "../../images/profile.png"
 import Friend from "./friend";
 
 

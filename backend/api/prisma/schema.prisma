@@ -21,7 +21,10 @@ model User {
   firstName String?
   lastName String?
 
+  FriendsId Int[]
   Post Post[]
+
+
   @@map("users")
 }
 
@@ -36,7 +39,7 @@ model Post {
 
   usersId Int
 
-  user User @relation(fields: [usersId], references: [id])
+  user User @relation(fields: [usersId], references: [id], onDelete: Cascade)
 
   @@map("posts")
 }

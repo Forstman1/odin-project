@@ -8,7 +8,9 @@ import classes from "./maincontent.module.css"
 export default function MainContent() {
     return (<div className={classes.container}>
         <SideBar />
-        <Feed />
-        <Contacts />
+        <div className={classes.sub_container}>
+            <Feed />
+            <Contacts />
+        </div>
     </div>);
 }
