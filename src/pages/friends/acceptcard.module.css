@@ -1,0 +1,70 @@
+
+.container {
+    width: 300px;
+    height: 500px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.image {
+    width: 100%;
+    height: 300px;
+}
+
+.text {
+    text-align: center;
+    font-size: 22px;
+    padding: 10px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 120px;
+}
+
+.approve {
+    background-color: #1A67B1;
+    color: white;
+    height: 40%;
+    width: 50%;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+.approve:hover {
+    background-color: #155c9f;
+}
+
+
+
+.denied {
+    background-color: #CCD3E0;
+    height: 40%;
+    width: 50%;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+.denied:hover {
+    background-color: #c2c9d6;
+}
+
+
+
+.add {
+    background-color: #ECF3FF;
+    color: #77A7FF;
+    height: 40%;
+    width: 50%;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.add:hover {
+    background-color: #dce5f6;
+}

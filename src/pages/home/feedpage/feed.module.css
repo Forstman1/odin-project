@@ -1,5 +1,6 @@
 
 .container {
+    margin-top: 100px;
     width: 800px;
     display: flex;
     flex-direction: column;
@@ -88,10 +89,18 @@
     .container {
         width: 80%;
     }
-    
+    .sub_container {
+        margin-left: 0px;
+    }
+    .avatar {
+        width: 60px;
+    }
     .input {
-        width: 65%;
+        width: 60%;
         height: 30px;
+    }
+    .input::placeholder {
+        font-size: 12px;
     }
     .avatar {
         width: 50px;

@@ -1,150 +1,100 @@
 
 
+
 .container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* justify-content: center; */
-    width: 100%;
-    position: absolute;
-    top: 60px;
-    /* height: 100%; */
-    /* height: 700px; */
-    /* background-color: white; */
-}
-
-.containers {
-    position: absolute;
-    width: 100%;
-    height: 450px;
-    background-color: white;
-    
 }
 
 .sub_container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 1200px;
-    top: 0;
-}
-
-
-
-.couverture {
     width: 100%;
-    height: 300px;
-    background-color: lightgrey;
-    border-radius: 5px;
-}
+    margin-top: 120px;
 
-.info {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
+    margin-left: 300px;
+    
 }
 
 .profile {
-    position: relative;    
-    bottom: 20px;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    width: 80%;
+    height: 1000px;
+    background-color: white;
+    border-radius: 50px;
 }
 
-.avatar {
-    width: 150px;
-    height: 150px;
-    border-radius: 80px;
-    border: 5px solid white;
-}
-
-.button {
-    height: 60px;
-    width: 100px;
-    border-radius: 10px;
-    background-color: transparent;
-}
-
-.maincontent {
+.header {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    align-items: center;
+    width: 90%;
+    height: 20%;
 }
 
-.feed {
-    display: flex;
-    justify-content: space-between;
-    /* align-items: center; */
-    width: 100%;
+.imagebox {
+}
+
+.title {
+    color: #1A67B1;
+    font-size: 22px;
 }
 
 .text {
-    margin-left: 10px;
+    font-size: 22px;
+    color: #D1DBE8;
+}
+.avatar {
+    width: 120px;
+}
+.buttonedit {
+    color: white;
+    border-radius: 5px;
+    width: 70px;
+    height: 40px;
+    background-color: #426383;
+    box-shadow: 5px 5px 5px lightgray;
+    
 }
 
-.post {
-    /* width: 700px; */
+.content {
+    width: 90%;
+    height: 50%;
+    border-top: 0.1px solid #1A67B1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+.buttonbox {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    /* margin: 0; */
+    height: 20%;
+    border-top: 0.5px solid #1A67B1;
+    width: 90%;
+    
+
 }
 
-
-
-.friends {
-    width: 450px;
+.button {
+    width: 200px;
+    height: 50px;
     border-radius: 10px;
+    color: white;
+    font-size: 18px;
+    background-color: #1A67B1;
+    box-shadow: 5px 5px 5px lightgray;
+
 }
 
-.friends2 {
-    background-color: white;
-    width: 100%;
-    border-radius: 10px;
+@media screen and (max-width: 1360px) {
+    .sub_container {
+        margin-left: 0px;
+    }
 }
 
-
-
-
-
-@media screen and (max-width: 1200px) {
-    .info {
-        flex-direction: column;
-    }
-    .couverture {
-        width: 100%;
-        height: 200px;
-
-    }
-    .containers {
-        height: 500px;
-    }
-    .profile {
-        flex-direction: column;
-    }
-    .feed {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-    .friends {
-        margin-top: 50px;
-        width: 40%;
-    }
-    .post {
-        width: 70%;
-    }
-  }
-
-  @media screen and (max-width: 500px) {
-    .friends {
-        width: 25%;
-
-    }
-    .post {
-        width: 60%;
-    }
-  }

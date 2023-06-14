@@ -29,7 +29,6 @@
     display: flex;
     gap: 10px;
     align-items: center;
-    cursor: pointer;
     margin-left: 70px;
     text-decoration: none;
 
@@ -38,7 +37,7 @@
 .info {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 15px;
 }
 
 .avatar {
@@ -74,7 +73,6 @@
 .input {
     border: 0;
     height: 95%;
-    /* width: 80%; */
     color: #1A67B1;
 }
 
@@ -92,7 +90,6 @@
 }
 
 .arrow {
-  margin-top: 5px;
   width: 8px;
 }
 
@@ -173,12 +170,69 @@
   }
 
 
+  .hamburger1 {
+    width: 30px;
+    transition: transform 1s ease;
+    cursor: pointer;
+    display: none;
+  }
+
+  .hamburger2 {
+    width: 30px;
+    cursor: pointer;
+    transition: transform 1s ease;
+    display: none;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    transform: translateX(0%);
+    transition: transform 0.3s ease;
+    display: none;
+  }
+
+  .sidebar2 {
+    background-color: white;
+    transform: translateX(10%);
+    transition: transform 0.3s ease;
+  }
+  .sidebar.open {
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+
+  }
+  
+  .sidebar_header {
+    padding: 20px;
+    transition: transform 1s ease;
+  }
+  
+  nav a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;  
+    color: #333;
+  }
+  
+  nav a:hover {
+    background: #f4f4f4;
+  }  
+
+
 
 @media screen and (max-width: 1360px) {
   .text {
     display: none;
   }
   .input {
+    display: none;
+  }
+  .searchbar {
     display: none;
   }
   .arrow {
@@ -194,7 +248,19 @@
   .container {
     display: flex;
     align-items: center;
+    justify-content: space-around;
+  }
+  .hamburger1 {
+    display: block;
+  }
+  .hamburger2 {
+    display: inline;
+    margin: 40px;
+  }
+  .sidebar {
+    transition: 1s;
+    display: flex;
     justify-content: space-between;
-
+    transition: transform 1s ease;
   }
 }

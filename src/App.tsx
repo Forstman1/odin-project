@@ -5,6 +5,7 @@ import Register from './pages/login_register/register';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import HomePage from './pages/home/HomePage';
 import ProfilePage from './pages/profile/profilepage';
+import Friends from './pages/friends/friends';
  
 
 
@@ -18,6 +19,7 @@ function App() {
           <Route path='/register' element={<Register />}/>
           <Route path='/login' element={<Login />}/>
           <Route path='/profile' element={<ProfilePage />}/>
+          <Route path='/friends' element={<Friends />}/>
 
         </Routes>
       </Router>

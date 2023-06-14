@@ -7,16 +7,24 @@ import exit from "../../images/exit.png"
 import { Link } from "react-router-dom";
 import arrow from "../../images/arrow2.png"
 import search from "../../images/search.png"
+import hamburger from "../../images/hamburger.png"
 
 
 
 function NavBar() {
 
   const [showAvatarInfo, setShowAvatarInfo] = useState(false)
+  const [showSidebar, setShowSidebar] = useState(false);
 
   const handleAvatarClick = () => {
     setShowAvatarInfo(!showAvatarInfo);
   };
+
+
+
+  const toggleSidebar = () => {
+    setShowSidebar(!showSidebar);
+  }
 
   return <div className={classes.container}>
 
@@ -24,11 +32,33 @@ function NavBar() {
 
 
 
+    <div className={classes.hamburger1} onClick={toggleSidebar}><img style={{width: '100%'}} src={hamburger} alt="hamburger" /></div>
 
     <Link to={"/"} className={classes.logo}>
       <img className={classes.avatarimage} src={logo} alt="logo" />
       <div className={classes.title}>SOHUBE</div>
     </Link>
+
+
+    {showSidebar && (  
+      <div className={classes.sidebar}>
+        <aside className={classes.sidebar2}>
+        <div className={classes.sidebar_header}>
+          <h3>Menu</h3>
+        </div>
+        
+        <nav>
+          <Link to="home">Home</Link>
+          <Link to="friends">Friends</Link>
+          <Link to="groups">Groups</Link>
+          <Link to="settings">Settings</Link>
+        </nav>  
+        
+      </aside>
+      <div className={classes.hamburger2} onClick={toggleSidebar}><img style={{width: '100%'}} src={hamburger} alt="hamburger" /></div>
+      </div>
+      )} 
+
 
     <div className={classes.avatar} >
       <div className={classes.searchbar}>
