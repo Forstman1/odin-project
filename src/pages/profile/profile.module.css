@@ -35,8 +35,7 @@
     height: 20%;
 }
 
-.imagebox {
-}
+
 
 .title {
     color: #1A67B1;
@@ -98,3 +97,44 @@
     }
 }
 
+
+@media screen and (max-width: 900px) {
+    .profile {
+        border-radius: 5px;
+        width: 95%;
+    }
+    .container {
+        width: 100%;
+    }
+    
+    .sub_container {
+        margin-top: 90px;
+        margin-left: 0px;
+    }
+
+    .imagebox {
+        width: 100px;
+    }
+    .title {
+        color: #1A67B1;
+        font-size: 22px;
+        width: 50%;
+    }
+    
+    .text {
+        font-size: 14px;
+        color: #D1DBE8;
+        /* width: 50%; */
+    }
+    .button {
+        width: 150px;
+    }
+    .buttonedit {
+        width: 50px;
+        font-size: 12px;
+        height: 30px;
+        background-color: #426383;
+        box-shadow: 5px 5px 5px lightgray;
+        
+    }
+}

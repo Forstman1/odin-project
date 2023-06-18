@@ -17,7 +17,8 @@ model User {
   email String @unique
   password String
 
-  image String?
+  image Bytes?
+
   firstName String?
   lastName String?
 
@@ -25,7 +26,6 @@ model User {
   Post Post[]
 
 
-  @@map("users")
 }
 
 
@@ -41,5 +41,27 @@ model Post {
 
   user User @relation(fields: [usersId], references: [id], onDelete: Cascade)
 
-  @@map("posts")
+}
+
+
+model Comment {
+  id Int @id @default(autoincrement())
+  creatAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  comment String?
+
+  usersId Int
+
+}
+
+
+model Like {
+  id Int @id @default(autoincrement())
+  creatAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  usersId Int
+
+
 }

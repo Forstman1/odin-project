@@ -248,10 +248,12 @@
   .container {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
   }
   .hamburger1 {
     display: block;
+    margin-left: 30px;
+
   }
   .hamburger2 {
     display: inline;
@@ -260,7 +262,8 @@
   .sidebar {
     transition: 1s;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     transition: transform 1s ease;
+    
   }
 }

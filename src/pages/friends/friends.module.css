@@ -18,11 +18,9 @@
     width: 100%;
     display: flex;
     justify-content: flex-start;
-    
     flex-wrap: wrap;
-    gap: 6px;
-    margin-left: 3px;
-
+    gap: 15px;
+    margin-left: 30px;
 }
 
 
@@ -37,5 +35,4 @@
     .cards {
         justify-content: center;
     }
-    
 }

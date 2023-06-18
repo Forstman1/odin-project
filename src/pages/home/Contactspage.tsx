@@ -14,7 +14,6 @@ export default function Contacts() {
                 <Contact image={avatar} text="Faycal hafid" />
                 <Contact image={avatar} text="wa7ed khona" />
                 <Contact image={avatar} text="wa7ed sayad" />
-
             </div>
             <p className={classes.text2}>Show more</p>
         </div>

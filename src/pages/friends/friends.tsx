@@ -13,7 +13,7 @@ export default function friends() {
         <div className={classes.container}>
             <SideBar />
             <div className={classes.sub_container}>
-                <div className='w-full ml-3 text-2xl font-black h-14 '>
+                <div className='w-full ml-9 text-2xl font-black h-14 '>
                     Invitations
                 </div>
                 <div className={classes.cards}>
@@ -29,7 +29,7 @@ export default function friends() {
                     <AcceptCard />
                     <AcceptCard />
                 </div>
-                <div className='w-full mt-10 text-2xl font-black ml-3 h-14'>
+                <div className='w-full mt-10 text-2xl font-black ml-9 h-14'>
                     People you might know
                 </div>
                 <div className={classes.cards}>

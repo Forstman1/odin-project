@@ -29,6 +29,7 @@
 
 .dots {
     width: 7px;
+    height: 20px;
     cursor: pointer;
 }
 
@@ -40,6 +41,7 @@
 .description {
     color: #1A67B1;
     margin-left: 10px;
+    margin: 15px;
 }
 
 .container_image {

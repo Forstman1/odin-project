@@ -5,7 +5,6 @@ import likeimage2 from "../../images/like2.png"
 
 import comment from "../../images/comment.png"
 import dots from "../../images/dots.png"
-// import likeimage from "../../images/like.png"
 
 
 
@@ -22,12 +21,12 @@ const Post = () => {
                 <img className={classes.avatar} src={avatar} alt='avatar' />
                 <div className={classes.info2}><div style={{color: '#426383'}}>sami hafid</div><div className={classes.date}>9 months ago</div></div>
             </div>
-            <div className={classes.dots}><img style={{width: '100%'}} src={dots} alt='vector'/></div>
+            <div className={classes.dots}><img style={{width: '100%', height: '100%'}} src={dots} alt='vector'/></div>
          </div>
         <p className={classes.description}>
             Some text chi7aja hotgame :)
         </p>
-        <div className={classes.container_image}><img className={classes.image} src='https://res.cloudinary.com/michalosman/image/upload/v1661525388/z5bd9ufsypckfg2rccyl.jpg' alt='test' /></div>
+        {/* <div className={classes.container_image}><img className={classes.image} src='https://res.cloudinary.com/michalosman/image/upload/v1661525388/z5bd9ufsypckfg2rccyl.jpg' alt='test' /></div> */}
 
         <div className={classes.interactive}>
             <div className={classes.likecomment}>

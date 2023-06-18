@@ -14,17 +14,28 @@ const Profile = () => {
                 <SideBar />
                 <div className={classes.sub_container}>
                     <div className={classes.profile}>
+
+
+
+
                         <div className={classes.header}>
                             <div className="flex justify-around h-full flex-col">
-                                <h1 className="text-[#1A67B1] text-4xl ">My Account</h1>
+                                <h1 className="text-[#1A67B1] text-2xl ">My Account</h1>
                                 <div className="flex flex-col h-1/3 justify-around">
-                                    <div className="text-2xl font-[100]	">Sami hafid</div>
+                                    <div className="text-xl font-[100]	">Sami hafid</div>
                                     <div className="text-xs text-blue-600 cursor-pointer ">change picture</div>
                                 </div>
                             </div>
                             <div className={classes.imagebox}><img className={classes.avatar} src={avatar} alt="avatar" /></div>
                         </div>
+
+
+
                         <div className={classes.content}>
+
+
+
+
                             <div className="flex justify-between items-center">
                                 <div className="flex flex-col justify-between">
                                     <div className={classes.title}>Username</div>
@@ -32,6 +43,8 @@ const Profile = () => {
                                 </div>
                                 <button className={classes.buttonedit}>EDIT</button>
                             </div>
+
+                            
                             <div className="flex justify-between items-center">
                                 <div className="flex flex-col justify-between">
                                     <div className={classes.title}>Email</div>
@@ -39,6 +52,7 @@ const Profile = () => {
                                 </div>
                                 <button className={classes.buttonedit}>EDIT</button>
                             </div>
+
                             <div className="flex justify-between items-center ">
                                 <div className="flex flex-col justify-between">
                                     <div className={classes.title}>Password</div>
@@ -49,6 +63,7 @@ const Profile = () => {
 
 
                         </div>
+
                         <div className={classes.buttonbox}>
                             <button className={classes.button}>Save changes</button>
                         </div>

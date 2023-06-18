@@ -9,6 +9,8 @@
 
 .title {
     width: 400px;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
@@ -18,7 +20,7 @@
     align-items: center;
     justify-content: space-around;
     width: 400px;
-    height: 500px;
+    height: 600px;
     border-radius: 10px;
 }
 
@@ -31,17 +33,32 @@
     padding-left: 10px;
 }
 
+.logo {
+    font-size: 22px;
+    color: #1A67B1;
+
+}
+
+
+.logocontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
 .button {
     width: 90%;
     border: solid 1px lightgray;
     border-radius: 5px;
     height: 50px;
-    background-color: #319795;
+    background-color: #1A67B1;
     color: white;
     font-size: 25px;
     font-weight: bold;
     cursor: pointer;
 }
+
 
 .text {
     color: #319795;
@@ -58,15 +75,35 @@
     border: solid 1px lightgray;
     border-radius: 5px;
     height: 40px;
-    background-color: #319795;
+    background-color: #1A67B1;
     color: white;
     font-size: 15px;
     font-weight: bold;
+}
+
+.sub_container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+    justify-content: space-around;
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
 }
 
 @media screen and (max-width: 680px) {
     .bigcontainer{
         flex-direction: column;
         text-align: center;
+        margin-top: 30px;
     }
+    .title {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+    
 }

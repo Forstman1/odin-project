@@ -25,6 +25,8 @@
 .friends {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    
     height: 100%;
     
 }
@@ -32,11 +34,15 @@
 .text1 {
     color: #1A67B1;
     font-size: 26px;
+    width: 100%;
+    margin: 10px;
+    text-align: left;
 }
 
 .text2 {
     color: #1A67B1;
-    font-size: 14px;
+    font-size: 16px;
+    margin-bottom: 10px;
     cursor: pointer;
     width: 100%;
     text-align: center;

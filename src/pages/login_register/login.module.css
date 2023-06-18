@@ -7,7 +7,11 @@
 }
 
 .title {
-    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 500px;
+    height: 200px;
 }
 
 .container {
@@ -36,7 +40,7 @@
     border: solid 1px lightgray;
     border-radius: 5px;
     height: 50px;
-    background-color: #319795;
+    background-color: #1A67B1;
     color: white;
     font-size: 25px;
     font-weight: bold;
@@ -44,8 +48,25 @@
 
 }
 
+.logocontainer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.description {
+    font-size: 20px;
+}
+
+.logo {
+    font-size: 26px;
+    color: #1A67B1;
+
+}
+
 .text {
-    color: #319795;
+    color: #1A67B1;
+    cursor: pointer;
 }
 
 .seperator {
@@ -59,7 +80,7 @@
     border: solid 1px lightgray;
     border-radius: 5px;
     height: 40px;
-    background-color: #319795;
+    background-color: #1A67B1;
     color: white;
     font-size: 17px;
     font-weight: bold;
@@ -74,5 +95,33 @@
     .bigcontainer{
         flex-direction: column;
         text-align: center;
+        margin-top: 30px;
+        width: 100%;
+    }
+    .logocontainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        height: 450px;
+        border-radius: 10px;
+    }
+    .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 200px;
+    }
+    .description {
+        font-size: 16px;
+    }
+    .logo {
+        font-size: 16px;
+    }
+    .image {
+        width: 50px;
     }
 }

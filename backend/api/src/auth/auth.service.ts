@@ -42,7 +42,10 @@ export class AuthService {
             )
             if (!user)
                 throw new ForbiddenException("incorect credentials");
+
+
             const pwMatches = await argon.verify(user.password, dto.password);
+            
             
             if (!pwMatches)
                 throw new ForbiddenException("incorect credentials");
@@ -51,6 +54,7 @@ export class AuthService {
         }
         catch (error)
         {
+            console.log(error)
             return error
         }
         

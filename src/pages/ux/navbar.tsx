@@ -32,7 +32,7 @@ function NavBar() {
 
 
 
-    <div className={classes.hamburger1} onClick={toggleSidebar}><img style={{width: '100%'}} src={hamburger} alt="hamburger" /></div>
+    <div className={classes.hamburger1} onClick={toggleSidebar}><img style={{ width: '100%' }} src={hamburger} alt="hamburger" /></div>
 
     <Link to={"/"} className={classes.logo}>
       <img className={classes.avatarimage} src={logo} alt="logo" />
@@ -40,24 +40,24 @@ function NavBar() {
     </Link>
 
 
-    {showSidebar && (  
+    {showSidebar && (
       <div className={classes.sidebar}>
         <aside className={classes.sidebar2}>
-        <div className={classes.sidebar_header}>
-          <h3>Menu</h3>
-        </div>
-        
-        <nav>
-          <Link to="home">Home</Link>
-          <Link to="friends">Friends</Link>
-          <Link to="groups">Groups</Link>
-          <Link to="settings">Settings</Link>
-        </nav>  
-        
-      </aside>
-      <div className={classes.hamburger2} onClick={toggleSidebar}><img style={{width: '100%'}} src={hamburger} alt="hamburger" /></div>
+          <div className={classes.sidebar_header}>
+            <h3>Menu</h3>
+          </div>
+
+          <nav>
+            <Link to="/">Home</Link>
+            <Link to="/friends">Friends</Link>
+            <Link to="/groups">Groups</Link>
+            <Link to="/settings">Settings</Link>
+          </nav>
+
+        </aside>
+        <div className={classes.hamburger2} onClick={toggleSidebar}><img style={{ width: '100%' }} src={hamburger} alt="hamburger" /></div>
       </div>
-      )} 
+    )}
 
 
     <div className={classes.avatar} >
@@ -86,9 +86,9 @@ function NavBar() {
     {showAvatarInfo && (
       <div className={classes.avatar_info_container}>
         <div className={classes.card}>
-          <Link className={classes.holder} to={"profile"}><div className={classes.imagecontainer}><img className={classes.icon} src={avatar2} alt="avatar" /></div><div className={classes.text2}>My profile</div></Link>
+          <Link className={classes.holder} to={"/settings"}><div className={classes.imagecontainer}><img className={classes.icon} src={avatar2} alt="avatar" /></div><div className={classes.text2}>My profile</div></Link>
           <div className={classes.sep}></div>
-          <Link className={classes.holder} to={"login"}><div className={classes.imagecontainer}><img className={classes.icon} src={exit} alt="avatar" /></div><div className={classes.text2}>Logout</div></Link>
+          <Link className={classes.holder} to={"/login"}><div className={classes.imagecontainer}><img className={classes.icon} src={exit} alt="avatar" /></div><div className={classes.text2}>Logout</div></Link>
         </div>
       </div>
     )}
