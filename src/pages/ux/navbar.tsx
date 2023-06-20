@@ -26,6 +26,14 @@ function NavBar() {
     setShowSidebar(!showSidebar);
   }
 
+
+  const handelLogout = () => {
+    localStorage.removeItem('token')
+    // localStorage.setItem('token', "")
+
+  }
+
+
   return <div className={classes.container}>
 
 
@@ -86,9 +94,9 @@ function NavBar() {
     {showAvatarInfo && (
       <div className={classes.avatar_info_container}>
         <div className={classes.card}>
-          <Link className={classes.holder} to={"/settings"}><div className={classes.imagecontainer}><img className={classes.icon} src={avatar2} alt="avatar" /></div><div className={classes.text2}>My profile</div></Link>
+          <button className={classes.logoutbutton} ><Link className={classes.holder} to={"/settings"}><div className={classes.imagecontainer}><img className={classes.icon} src={avatar2} alt="avatar" /></div><div className={classes.text2}>My profile</div></Link></button>
           <div className={classes.sep}></div>
-          <Link className={classes.holder} to={"/login"}><div className={classes.imagecontainer}><img className={classes.icon} src={exit} alt="avatar" /></div><div className={classes.text2}>Logout</div></Link>
+          <button className={classes.logoutbutton} onClick={handelLogout}><Link className={classes.holder} to={"/login"}><div className={classes.imagecontainer}><img className={classes.icon} src={exit} alt="avatar" /></div><div className={classes.text2}>Logout</div></Link></button>
         </div>
       </div>
     )}

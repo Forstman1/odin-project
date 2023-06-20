@@ -8,12 +8,17 @@ import ProfilePage from './pages/profile/profilepage';
 import Friends from './pages/friends/friends';
 import Groups from './pages/groups/groups';
 import authHOC from './auth/auth';
+import authHOCLogin from './auth/authlogin';
  
 
 const WrappedComponentHome = authHOC(HomePage)
 const WrappedComponentsettings = authHOC(ProfilePage)
 const WrappedComponentFriends = authHOC(Friends)
 const WrappedComponentgroups = authHOC(Groups)
+
+const WrappedComponentLogin = authHOCLogin(Login)
+const WrappedComponentRegister = authHOCLogin(Register)
+
 
 
 function App() {
@@ -30,8 +35,8 @@ function App() {
 
 
 
-          <Route path='/register' element={<Register />}/>
-          <Route path='/login' element={<Login />}/>
+          <Route path='/login' element={<WrappedComponentLogin />}/>
+          <Route path='/register' element={<WrappedComponentRegister />}/>
         </Routes>
       </Router>
     </div>

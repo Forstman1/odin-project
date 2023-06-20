@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import logo from "../../images/lgo.png"
 import { useForm } from 'react-hook-form';
 import { useMutation } from "@tanstack/react-query";
-
+ 
 
 
 
@@ -20,7 +20,7 @@ type Token = {
 export default function Login() {
 
 
-  const { handleSubmit, formState: { errors }, register } = useForm<FormValues>();
+  const { handleSubmit, register } = useForm<FormValues>();
 
 
 
@@ -55,10 +55,14 @@ export default function Login() {
         email: data.email,
         password: data.password,
       });
-
-      console.log(result.access_token, "ana hna", data);
-      localStorage.setItem("token", result.access_token);
-
+      if (result.access_token)
+      {
+        
+        console.log(result.access_token, "ana hna", data);
+        localStorage.setItem("token", result.access_token);
+        window.location.href = "/"
+      }
+      
 
     } catch (error) {
       console.log(error);

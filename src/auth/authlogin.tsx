@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import Login from '../pages/login_register/login';
-// import { useHistory } from 'react-router-dom';
-// import { createBrowserHistory } from 'history';
+import HomePage from '../pages/home/HomePage';
+import Register from '../pages/login_register/register';
 
 
 
-const authHOC = (WrappedComponent: any) => {
+const authHOCLogin = (WrappedComponent: any) => {
 
 
   async function checkTokenValidity(token: any) {
-
+    
 
 
 
@@ -20,26 +20,24 @@ const authHOC = (WrappedComponent: any) => {
     })
     const response = await api.json()
     return response
-
+    
   }
 
 
 
 
-  const AuthenticatedComponent = (props: any) => {
+  const AuthenticatedComponent = (props:any) => {
 
     const token = localStorage.getItem('token');
     
     const [isTokenValid, setIsTokenValid] = useState(false);
-    // const history = createBrowserHistory();
-
-
+    
     useEffect(() => {
       const checkValidity = async () => {
         const isValid = await checkTokenValidity(token);
         setIsTokenValid(isValid);
       };
-
+      
       checkValidity();
     }, [token]);
 
@@ -48,20 +46,22 @@ const authHOC = (WrappedComponent: any) => {
 
 
 
+    console.log(isTokenValid)
 
-    if (isTokenValid) {
-      return <WrappedComponent {...props} />;
+
+    if (isTokenValid) { 
+        window.location.href = "/";
+        return <HomePage {...props} />;
     } else {
-      console.log("aan hna")
+        if (WrappedComponent === Register)
+            return <Register />;
+        else
+            return <Login />;
 
-      // history.push("/login")
-
-
-      return <Login />;
     }
   };
 
   return AuthenticatedComponent;
 };
 
-export default authHOC;
+export default authHOCLogin;

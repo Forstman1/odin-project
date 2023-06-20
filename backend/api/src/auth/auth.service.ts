@@ -19,15 +19,13 @@ export class AuthService {
                 data: {
                     email: dto.email,
                     password: hash,
+                    firstName: dto.firstname,
+                    lastName: dto.lastname
                 }
             })
-
             return this.signToken(user.id, user.email);
-
-        }
-        catch (error)
-        {
-            return error
+        } catch (error) {
+            return { "error": error }
         }
     }
 

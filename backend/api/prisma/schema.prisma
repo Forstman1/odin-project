@@ -22,8 +22,11 @@ model User {
   firstName String?
   lastName String?
 
-  FriendsId Int[]
+  friends   Int[] 
+
+  
   Post Post[]
+
 
 
 }

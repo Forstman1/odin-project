@@ -18,10 +18,7 @@ export class UserController {
         return req.user
     }
 
-    @Get('token')
-    checkToken(@Req() req: Request) {
-        return this.userservice.checkToken(req.headers.authorization)
-    }
+    
 
 
     @Get(':id')
