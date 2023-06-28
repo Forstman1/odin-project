@@ -4,13 +4,14 @@ import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { TokenModule } from './token/token.module';
+import { PostModule } from './post/post.module';
 
 
 @Module({
   imports: [AuthModule,
             UserModule, 
-            PrismaModule, 
-            ConfigModule.forRoot({}), TokenModule],
+            PrismaModule,
+            ConfigModule.forRoot({}), TokenModule, PostModule],
 })
 
 

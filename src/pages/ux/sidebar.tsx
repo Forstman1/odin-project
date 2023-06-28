@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import profile from "../../images/profile.png"
 import classes from "./sidebar.module.css"
 
@@ -12,19 +12,23 @@ import friends from "../../images/sidebaricon/friends.png"
 import groups from "../../images/sidebaricon/groups.png"
 import settings from "../../images/sidebaricon/settings.png"
 import { Link, useLocation } from "react-router-dom";
+import MyContext from "../../auth/MyContext";
 
 
 
 export default function SideBar() {
 
     const location = useLocation().pathname;
+    const data = useContext(MyContext)
 
 
+
+    
     return (<div className={classes.container} >
         <div className={classes.sub_container}>
             <div className={classes.info}>
                 <img className={classes.profile} src={profile} alt="profile" />
-                <div className={classes.username}>Sami hafid</div>
+                <div className={classes.username}>{data.firstname + " " + data.lastname}</div>
                 <div className={classes.location}>Morocco</div>
             </div>
 

@@ -9,10 +9,6 @@ const ProfilePage = () => {
     return <div>
         <NavBar />
         <Profile />
-        {/* <div className={classes.maincontent}>
-            <div>d</div>
-            <div className={classes.post}><Post /></div>
-        </div> */}
     </div>
 }
 

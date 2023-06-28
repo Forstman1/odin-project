@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./profile.module.css"
 import avatar from "../../images/profile.png"
 import NavBar from "../ux/navbar";
 import SideBar from "../ux/sidebar";
+import MyContext from "../../auth/MyContext";
 
 
 
 const Profile = () => {
+
+    const data = useContext(MyContext)
     return (
         <div>
             <NavBar />
@@ -22,7 +25,7 @@ const Profile = () => {
                             <div className="flex justify-around h-full flex-col">
                                 <h1 className="text-[#1A67B1] text-2xl ">My Account</h1>
                                 <div className="flex flex-col h-1/3 justify-around">
-                                    <div className="text-xl font-[100]	">Sami hafid</div>
+                                    <div className="text-xl font-[100]	">{data.firstname + " " + data.lastname}</div>
                                     <div className="text-xs text-blue-600 cursor-pointer ">change picture</div>
                                 </div>
                             </div>
@@ -39,7 +42,7 @@ const Profile = () => {
                             <div className="flex justify-between items-center">
                                 <div className="flex flex-col justify-between">
                                     <div className={classes.title}>Username</div>
-                                    <div className={classes.text}>Sami hafid</div>
+                                    <div className={classes.text}>{data.firstname + " " + data.lastname}</div>
                                 </div>
                                 <button className={classes.buttonedit}>EDIT</button>
                             </div>
@@ -48,7 +51,7 @@ const Profile = () => {
                             <div className="flex justify-between items-center">
                                 <div className="flex flex-col justify-between">
                                     <div className={classes.title}>Email</div>
-                                    <div className={classes.text}>Sami.hafid.hs@gmail.com</div>
+                                    <div className={classes.text}>{data.email}</div>
                                 </div>
                                 <button className={classes.buttonedit}>EDIT</button>
                             </div>

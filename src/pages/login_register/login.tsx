@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import classes from "./login.module.css"
 import { Link } from "react-router-dom";
 import logo from "../../images/lgo.png"
@@ -21,7 +21,7 @@ export default function Login() {
 
 
   const { handleSubmit, register } = useForm<FormValues>();
-
+  const [errorMessage, setErrorMessage] = useState("");
 
 
   const loginMutation = useMutation<Token, Error, FormValues>((variables) =>
@@ -44,23 +44,26 @@ export default function Login() {
         return data;
       })
       .catch((error) => {
+        setErrorMessage("incorrect email or password");
         throw new Error("Login failed", error);
       })
   );
 
   const onSubmit = async (data: FormValues) => {
     try {
-
       const result = await loginMutation.mutateAsync({
         email: data.email,
         password: data.password,
       });
+      
       if (result.access_token)
       {
-        
         console.log(result.access_token, "ana hna", data);
         localStorage.setItem("token", result.access_token);
         window.location.href = "/"
+      }
+      else{
+        setErrorMessage("incorrect email or password");
       }
       
 
@@ -91,7 +94,7 @@ export default function Login() {
 
       <input {...register("email")} required className={classes.input} type='email' placeholder="Email or phone number" />
       <input {...register("password")} required className={classes.input} type='password' placeholder='Password' />
-
+      {errorMessage && <p className={classes.error}>{errorMessage}</p>}
       <button className={classes.button} >Log In</button>
       <p className={classes.text}>Forgot password?</p>
 

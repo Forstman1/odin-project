@@ -42,7 +42,7 @@ export default function Register() {
         return data;
       })
       .catch((error) => {
-        throw new Error("Login failed", error);
+        throw new Error("signup failed", error);
       })
   );
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import classes from "./navbar.module.css"
 import avatar from "../../images/profile.png"
 import logo from "../../images/lgo.png"
@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import arrow from "../../images/arrow2.png"
 import search from "../../images/search.png"
 import hamburger from "../../images/hamburger.png"
+import MyContext from "../../auth/MyContext";
 
 
 
@@ -15,6 +16,9 @@ function NavBar() {
 
   const [showAvatarInfo, setShowAvatarInfo] = useState(false)
   const [showSidebar, setShowSidebar] = useState(false);
+
+  const data = useContext(MyContext)
+
 
   const handleAvatarClick = () => {
     setShowAvatarInfo(!showAvatarInfo);
@@ -29,7 +33,6 @@ function NavBar() {
 
   const handelLogout = () => {
     localStorage.removeItem('token')
-    // localStorage.setItem('token', "")
 
   }
 
@@ -76,7 +79,7 @@ function NavBar() {
 
       <div className={classes.info} onClick={handleAvatarClick}>
         <img className={classes.avatarimage} src={avatar} alt="avatar" />
-        <div className={classes.text}>sami hafid</div>
+        <div className={classes.text}>{data.firstname + " " + data.lastname}</div>
         <img className={classes.arrow} src={arrow} alt="arrow" />
       </div>
     </div>

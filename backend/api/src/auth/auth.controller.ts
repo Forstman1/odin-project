@@ -14,6 +14,7 @@ export class AuthController{
 
     @Post('signin')
     signin(@Body() dto: AuthDto) {
+        console.log("ana hna signin")
         return this.authService.signin(dto)
     }
 }

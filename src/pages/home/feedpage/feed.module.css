@@ -60,8 +60,6 @@
     border: 1px solid lightgrey;
     cursor: pointer;
     background-color: transparent;
-    height: 5px;
-    width: 95%;
     border-radius: 5px;
     border: none;
     transition: 0.5s;
@@ -70,12 +68,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    /* gap: 15px; */
     color: #1A67B1;
 }
 
+.post {
+    background-color: #1A67B1;
+    color: white;
+    font-weight: bold;
+    box-shadow:  8px 8px 16px #c1c1c1,
+    -8px -8px 16px #ffffff;
+    margin-bottom: 5px;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+}
+
 .inputimage {
-    
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
 }
 
 .container {
