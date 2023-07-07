@@ -73,7 +73,7 @@ export class AuthService {
             email: user.email,
             firstname: user.firstName,
             lastname: user.lastName,
-            createAt: user.creatAt
+            createAt: user.createdAt
 
         }
         const secret = this.config.get('JWT_SECRET')

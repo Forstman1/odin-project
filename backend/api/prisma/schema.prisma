@@ -9,62 +9,64 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+
 model User {
-  id Int @id @default(autoincrement())
-  creatAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  email String @unique
-  password String
-
-  image Bytes?
-
+  id        Int       @id @default(autoincrement())
   firstName String?
   lastName String?
-
+  email     String    @unique
+  password  String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
   friends   Int[] 
 
-  
-  Post Post[]
-
-
-
+  posts     Post[]
+  comments  Comment[]
+  likes     Like[]
 }
+
+
 
 
 model Post {
-  id Int @id @default(autoincrement())
-  creatAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id          Int      @id @default(autoincrement())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 
-  image String?
+  image       String?
   description String?
 
-  usersId Int
+  userId      Int
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  user User @relation(fields: [usersId], references: [id], onDelete: Cascade)
-
+  comments    Comment[]
+  likes       Like[]
 }
-
-
-model Comment {
-  id Int @id @default(autoincrement())
-  creatAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  comment String?
-
-  usersId Int
-
-}
-
 
 model Like {
-  id Int @id @default(autoincrement())
-  creatAt DateTime @default(now())
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  postId    Int
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, postId])
+}
+
+model Comment {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  usersId Int
+  comment   String?
 
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
+  postId    Int
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
 }
+

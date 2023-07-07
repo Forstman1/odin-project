@@ -22,8 +22,8 @@ export class UserController {
 
 
     @Get(':id')
-    getUser(@Param('id') id: number) {
-        return "ha wa7ed user " + id
+    getUser(@Param('id') id: string) {
+        return this.userservice.getUser(id)
     }
 }
 

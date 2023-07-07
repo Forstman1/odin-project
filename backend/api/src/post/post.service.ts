@@ -5,17 +5,17 @@ import { PrismaService } from 'src/prisma/prisma.service';
 export class PostService {
     constructor(private prisma: PrismaService) {}
 
-    async getposts(data: any): Promise<any> {
+    async getposts(userId: any): Promise<any> {
         try {
             const user = await this.prisma.user.findUnique({
                 where: {
-                    id: parseInt(data.id)
+                    id: parseInt(userId)
                 }
             })
             const allposts = await this.prisma.post.findMany({
                 where:{
                     user:{
-                        id: parseInt(data.id),
+                        id: parseInt(userId),
                     }
                 }
             })
