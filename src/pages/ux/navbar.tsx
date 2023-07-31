@@ -61,7 +61,7 @@ function NavBar() {
           <nav>
             <Link to="/">Home</Link>
             <Link to="/friends">Friends</Link>
-            <Link to="/groups">Groups</Link>
+            <Link to="/findnewfriends">Groups</Link>
             <Link to="/settings">Settings</Link>
           </nav>
 

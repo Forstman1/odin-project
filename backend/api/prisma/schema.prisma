@@ -11,6 +11,7 @@ datasource db {
 
 
 model User {
+
   id        Int       @id @default(autoincrement())
   firstName String?
   lastName String?
@@ -18,15 +19,43 @@ model User {
   password  String
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
-  friends   Int[] 
 
   posts     Post[]
   comments  Comment[]
   likes     Like[]
+  friends   Friend[]
+  requestsend Friendrequest[] @relation("sendrequest")
+  requestreveive Friendrequest[] @relation("reveiverequest")
+
 }
 
 
+model Friendrequest {
 
+  id        Int       @id @default(autoincrement())
+  requesterId Int
+  recipientId Int
+
+  status     String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  requester User @relation("sendrequest", fields: [requesterId], references: [id], onDelete: Cascade)
+  receiver User @relation("reveiverequest", fields: [recipientId], references: [id], onDelete: Cascade)
+  
+  // @@unique([requesterId, recipientId])
+
+}
+
+
+model Friend {
+  
+  id Int  @id @default(autoincrement())
+
+  friendId Int
+  userId   Int
+  friend User @relation(fields: [friendId], references: [id], onDelete: Cascade)
+}
 
 model Post {
   id          Int      @id @default(autoincrement())
@@ -42,6 +71,9 @@ model Post {
   comments    Comment[]
   likes       Like[]
 }
+
+
+
 
 model Like {
   id        Int      @id @default(autoincrement())

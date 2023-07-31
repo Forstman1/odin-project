@@ -30,4 +30,19 @@ export class UserService {
         }
     }
 
+    async getallusers(body: any)
+    {
+        try {
+            const user = await this.prisma.user.findMany()
+            if (!user)
+                throw new ForbiddenException("no user was matched")
+            return {info: user}
+        }
+        catch (error)
+        {
+            console.error(error)
+            return {info: "no users found"}
+        }
+    }
+
 }

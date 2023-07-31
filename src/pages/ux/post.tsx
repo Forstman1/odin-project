@@ -25,6 +25,7 @@ const Post = (props: any) => {
     const Data = useContext(MyContext);
     const [Like, setLike] = useState(false)
     const [numberLikes, setnumberLikes] = useState(0)
+    const [numberComments, setnumberComments] = useState(0)
 
     const [FirstName, setFirstName] = useState("")
     const [LastName, setLastName] = useState("")
@@ -79,7 +80,7 @@ const Post = (props: any) => {
 
 
       useEffect(() => {
-        async function fetchData() {
+        async function fetchDataLiked() {
           const response = await fetch('http://127.0.0.1:4000/like/likestatus/' + props.data.id + "/" + Data.sub, {
             method: "GET",
           });
@@ -90,7 +91,7 @@ const Post = (props: any) => {
             setLike(false)
         
         }
-        async function fetchAllData() {
+        async function fetchAllLikes() {
 
           const response = await fetch('http://127.0.0.1:4000/like/all/' + props.data.id,  {
             method: "GET",
@@ -100,8 +101,17 @@ const Post = (props: any) => {
             setnumberLikes(user.length)
 
         }
-        fetchData()
-        fetchAllData()
+        async function fetchComments() {
+
+          const response = await fetch('http://127.0.0.1:4000/comment/getallcomments/' + props.data.id, {
+              method: "GET",
+            });
+            const comments = await response.json()
+            setnumberComments(comments.length)
+        }
+        fetchDataLiked()
+        fetchAllLikes()
+        fetchComments()
       }, [])
 
 
@@ -202,7 +212,7 @@ const Post = (props: any) => {
             </div>
             <div className={classes.likecomment}>
                 <img src={commentimage} alt='comment' />
-                <div>12</div>
+                <div>{numberComments}</div>
             </div>
         </div>
             

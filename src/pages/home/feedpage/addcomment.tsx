@@ -77,7 +77,6 @@ export default function AddComment(props: any) {
         <input
             {...register("comment")}
             required
-            min="3"
             className={classes.commentinput2}
             placeholder="Write a comment..."
         />

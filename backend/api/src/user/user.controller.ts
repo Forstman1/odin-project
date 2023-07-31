@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Req, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Param, Req, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { Request } from 'express';
 import { UserService } from './user.service';
@@ -18,7 +18,10 @@ export class UserController {
         return req.user
     }
 
-    
+    @Get('/allusers')
+    getallusers(@Body() body: any) {
+        return this.userservice.getallusers(body)
+    }
 
 
     @Get(':id')

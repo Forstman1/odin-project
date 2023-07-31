@@ -47,8 +47,8 @@ export default function SideBar() {
 
 
                 <div className={classes.section}>
-                    <img className={classes.icon} src={location === "/groups" ? groupsblue : groups} alt="Groups"/>
-                    <Link to="/groups" className={location === "/groups" ? classes.text2 : classes.text}>Groups</Link>
+                    <img className={classes.icon} src={location === "/findnewfriends" ? groupsblue : groups} alt="findnewfriends"/>
+                    <Link to="/findnewfriends" className={location === "/findnewfriends" ? classes.text2 : classes.text}>Find new friends</Link>
                 </div>
 
 
