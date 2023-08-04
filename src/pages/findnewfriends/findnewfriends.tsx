@@ -10,7 +10,10 @@ import AcceptCard from "../friends/acceptcard";
 export default function Findnewfriends () {
 
     let Data = useContext(MyContext)
-    const [allusers, setAllusers] = useState([])
+    const [allusers, setAllusers]: any = useState([])
+    const [allfriends, setAllfriends]:any = useState([])
+    const [allusers1, setAllusers1]: any = useState([])
+
     const [allrequests, setAllrequests] = useState([])
 
     const id = Data.sub
@@ -29,7 +32,28 @@ export default function Findnewfriends () {
             const response = await api.json()
             setAllusers(response.info)
         }
+        async function fetchfriends() {
+            const api = await fetch("http://127.0.0.1:4000/friend/getfriends/" + id,
+            {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+              },
+            })
+            const response = await api.json()
+            setAllfriends(response.info)
 
+            // let newusers:any =   allusers.filter((data: any)=> {
+            //     for (let i = 0; i != allfriends.length; i++)
+            //     {
+            //         if (data.id === allfriends[i].userId || data.id === allfriends[i].friendId)
+            //             return false
+            //     }
+            //     return true
+            // })
+            
+            // setAllusers(newusers) 
+        }
         async function fetchrequests() {
             const api = await fetch("http://127.0.0.1:4000/friendrequest/getdata/" + id,
             {
@@ -41,12 +65,42 @@ export default function Findnewfriends () {
             const response = await api.json()
             setAllrequests(response.info)
         }
+        
+        
+        async function removefriendsfromusers() {
+
+            let newusers = await allusers.filter((data: any)=> {
+                for (let i = 0; i != allfriends.length; i++)
+                {
+                    if (data.id === allfriends[i].userId || data.id === allfriends[i].friendId)
+                        return false
+                }
+                return true
+            })
+            
+            setAllusers1(newusers) 
+        }
+
         fetchusers()
+        fetchfriends()
         fetchrequests()
 
     }, [])
 
 
+    useEffect(() => {
+        let newusers: any = allusers.filter((data: any) => {
+          for (let i = 0; i < allfriends.length; i++) {
+            if (data.id === allfriends[i].userId || data.id === allfriends[i].friendId) {
+              return false;
+            }
+          }
+          return true;
+        });
+    
+        setAllusers1(newusers);
+      }, [allusers, allfriends]);
+    
 
 
     return (<div>
@@ -61,10 +115,6 @@ export default function Findnewfriends () {
                     {allrequests.map((data) => {
                         return <AcceptCard data={data}/>
                     })}
-                    {/* <AcceptCard />
-                    <AcceptCard />
-                    <AcceptCard />
-                    <AcceptCard /> */}
 
                 </div>
                 <div className='w-full mt-10 text-2xl font-black ml-9 h-14'>
@@ -72,7 +122,7 @@ export default function Findnewfriends () {
                 </div>
                 <div className={classes.cards}>
 
-                    {allusers.map((data: any) => {
+                    {allusers1.map((data: any) => {
                         return <Card key={data.id} data={data}/>
                     })}
                 

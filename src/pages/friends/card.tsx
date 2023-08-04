@@ -17,7 +17,6 @@ export default function Card(props: any) {
 
 
     useEffect(() => {
-        let data: any
         const fetchData = async () => {
             const api = await fetch("http://127.0.0.1:4000/friendrequest/getdata/" + Data.sub + "/" + props.data.id)
             const response = await api.json()    
@@ -25,7 +24,6 @@ export default function Card(props: any) {
                 setSent(false)
         }
         fetchData()
-        console.log(data)
     }, [])
 
     const sendfriendrequest = useMutation<any, Error, requestValue>((variables) => 
@@ -68,12 +66,13 @@ export default function Card(props: any) {
 
     const addtofriend = async () => {
         
-        await sendfriendrequest.mutateAsync({
+        const addfriend = await sendfriendrequest.mutateAsync({
             requester: Data.sub,
             receiver: props.data.id,
             status: "pending",
         })
-        setSent(false)
+        if (addfriend.status !== 403)
+          setSent(false)  
     }
 
     const removefriends = async () => {

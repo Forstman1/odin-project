@@ -12,6 +12,6 @@ export class FriendController {
 
     @Post('/addfriend')
     addfriend(@Body() body: any) {
-        
+        return this.friendservice.createfriend(body.userId, body.friendId)
     }
 }

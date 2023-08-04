@@ -1,14 +1,35 @@
 import { ForbiddenException, Injectable } from '@nestjs/common';
+import { FriendService } from 'src/friend/friend.service';
 import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
 export class FriendrequestService {
-    constructor(private prisma: PrismaService){}
+    constructor(private prisma: PrismaService, private friendservice: FriendService){}
 
     async createfriendrequest(data: any) {
         try {
             if (data.receiver === data.requester)
                 throw new ForbiddenException("you cannot add yourself")
+            const friend1 = await this.prisma.friend.findMany({
+                where: {
+                    userId: parseInt(data.receiver),
+                    friendId: parseInt(data.requester)
+                }
+            })
+
+            const friend2 = await this.prisma.friend.findMany({
+                where: {
+                    userId: parseInt(data.requester),
+                    friendId: parseInt(data.receiver)
+                }
+            })
+            let friends = friend1.concat(friend2)
+            if (friends[0] != undefined)
+                throw new ForbiddenException("already friends")
+
+
+            console.log(friends, "ana hna")
+
             const friendrequest: any = await this.prisma.friendrequest.create({
                 data: {
                   status: data.status,
@@ -102,4 +123,26 @@ export class FriendrequestService {
             return error
         }
     }
+
+    async approvefriendrequest(body: any)
+    {
+        try {
+            
+            const friendrequest: any = await this.prisma.friendrequest.findUnique({
+                where: {
+                    id: parseInt(body.id)
+                }
+            })
+            console.log(friendrequest + " ----- ")
+
+            const friend = await this.friendservice.createfriend(body.userId, body.friendId)
+            console.log(friend.info + " ----- ")
+
+            await this.Deletefriendrequest({requester: friendrequest.requesterId, receiver: friendrequest.recipientId})
+            return {friend}
+        } catch (error) {
+            return error
+        }
+    }
+
 }

@@ -25,6 +25,11 @@ export class FriendrequestController {
         return this.friendrequestservice.createfriendrequest(body)
     }
 
+    @Post('/approvefriendrequest')
+    approvefriendrequest(@Body() body: any) {
+        return this.friendrequestservice.approvefriendrequest(body)
+    }
+
     @Put('/updatefriendrequest')
     updatefriendrequest(@Body() body: any) {
         return this.friendrequestservice.updatefriendrequest(body)
@@ -34,5 +39,5 @@ export class FriendrequestController {
     deletefriendrequest(@Body() body:any) {
         return this.friendrequestservice.Deletefriendrequest(body);
     }
-    
+
 }
