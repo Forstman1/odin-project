@@ -1,5 +1,5 @@
 import React from "react";
-import Contact from "./Contact";
+import Contact from "./contact";
 import classes from "./contactspage.module.css"
 import avatar from "../../images/profile.png"
 
